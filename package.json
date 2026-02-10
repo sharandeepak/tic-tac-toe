@@ -6,7 +6,9 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && firebase deploy --only hosting",
+    "deploy:preview": "next build && firebase hosting:channel:deploy preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
