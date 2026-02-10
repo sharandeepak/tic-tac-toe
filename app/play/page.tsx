@@ -170,8 +170,10 @@ function PlayContent() {
 	const [copied, setCopied] = useState(false);
 	const [initError, setInitError] = useState("");
 	const [quitting, setQuitting] = useState(false);
+	const [isCheckingGame, setIsCheckingGame] = useState(true);
 
 	// Initialize game and player name from URL params
+	// Check if a game already exists (opponent joining via shared link)
 	useEffect(() => {
 		const playerName = searchParams.get("player") || "Player";
 		const opponentName = searchParams.get("opponent") || "Opponent";
@@ -189,9 +191,12 @@ function PlayContent() {
 						mark: myMark,
 					});
 					setGameStarted(true);
+					// Don't show share screen - this player is joining an existing game
 				}
 			} catch (error) {
 				console.error("Error checking game:", error);
+			} finally {
+				setIsCheckingGame(false);
 			}
 		};
 
@@ -316,7 +321,26 @@ function PlayContent() {
 		router.push("/");
 	};
 
-	// Step 1: Mark Selection
+	// Step 0: Show loading while checking if a game already exists (opponent joining)
+	if (isCheckingGame) {
+		return (
+			<div className="game-bg flex items-center justify-center">
+				<div className="text-center anim-slide-up">
+					<div
+						className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 anim-glow-pulse"
+						style={{ background: "var(--g-accent-bg)", color: "var(--g-accent)" }}
+					>
+						<Gamepad2 size={32} />
+					</div>
+					<p className="text-lg font-medium" style={{ color: "var(--g-text-2)" }}>
+						Connecting to game...
+					</p>
+				</div>
+			</div>
+		);
+	}
+
+	// Step 1: Mark Selection (only shown if no existing game was found - i.e. game creator)
 	if (!gameStarted || !playerState) {
 		return (
 			<div>
