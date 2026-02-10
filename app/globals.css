@@ -1,0 +1,553 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==============================================
+   TIC TAC TOE - GAME THEME SYSTEM
+   6 themes × 2 modes (light/dark) = 12 palettes
+   ============================================== */
+
+@layer base {
+  /* ---------- NEON ARCADE (default) ---------- */
+  :root,
+  [data-game-theme="neon"] {
+    --g-bg-1: #f0fdfa;
+    --g-bg-2: #fdf2f8;
+    --g-surface: #ffffff;
+    --g-surface-alt: #f8fafc;
+    --g-border: #e2e8f0;
+    --g-text: #0f172a;
+    --g-text-2: #475569;
+    --g-text-3: #94a3b8;
+    --g-x: #06b6d4;
+    --g-x-bg: #ecfeff;
+    --g-x-glow: rgba(6, 182, 212, 0.35);
+    --g-o: #ec4899;
+    --g-o-bg: #fdf2f8;
+    --g-o-glow: rgba(236, 72, 153, 0.35);
+    --g-accent: #06b6d4;
+    --g-accent-hover: #0891b2;
+    --g-accent-bg: #ecfeff;
+    --g-cell: #f8fafc;
+    --g-cell-hover: #f1f5f9;
+    --g-cell-border: #e2e8f0;
+    --g-glow: rgba(6, 182, 212, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #e2e8f0;
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark[data-game-theme="neon"],
+  .dark:not([data-game-theme]) {
+    --g-bg-1: #0c0a1a;
+    --g-bg-2: #1a0a2e;
+    --g-surface: rgba(30, 27, 58, 0.8);
+    --g-surface-alt: rgba(42, 38, 80, 0.8);
+    --g-border: #3d3766;
+    --g-text: #f1f5f9;
+    --g-text-2: #cbd5e1;
+    --g-text-3: #94a3b8;
+    --g-x: #22d3ee;
+    --g-x-bg: rgba(34, 211, 238, 0.12);
+    --g-x-glow: rgba(34, 211, 238, 0.5);
+    --g-o: #f472b6;
+    --g-o-bg: rgba(244, 114, 182, 0.12);
+    --g-o-glow: rgba(244, 114, 182, 0.5);
+    --g-accent: #22d3ee;
+    --g-accent-hover: #06b6d4;
+    --g-accent-bg: rgba(34, 211, 238, 0.12);
+    --g-cell: rgba(42, 38, 80, 0.6);
+    --g-cell-hover: rgba(61, 55, 102, 0.6);
+    --g-cell-border: #3d3766;
+    --g-glow: rgba(34, 211, 238, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(42, 38, 80, 0.6);
+    --g-input-border: #3d3766;
+
+    --background: 260 30% 5%;
+    --foreground: 0 0% 98%;
+    --card: 260 30% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 260 30% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 260 20% 14%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 260 20% 14%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 260 20% 14%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 260 20% 18%;
+    --input: 260 20% 18%;
+    --ring: 0 0% 83.1%;
+  }
+
+  /* ---------- OCEAN ---------- */
+  [data-game-theme="ocean"] {
+    --g-bg-1: #eff6ff;
+    --g-bg-2: #f0fdfa;
+    --g-surface: #ffffff;
+    --g-surface-alt: #f0f9ff;
+    --g-border: #bfdbfe;
+    --g-text: #0c4a6e;
+    --g-text-2: #0369a1;
+    --g-text-3: #7dd3fc;
+    --g-x: #2563eb;
+    --g-x-bg: #dbeafe;
+    --g-x-glow: rgba(37, 99, 235, 0.35);
+    --g-o: #0d9488;
+    --g-o-bg: #ccfbf1;
+    --g-o-glow: rgba(13, 148, 136, 0.35);
+    --g-accent: #2563eb;
+    --g-accent-hover: #1d4ed8;
+    --g-accent-bg: #dbeafe;
+    --g-cell: #f0f9ff;
+    --g-cell-hover: #e0f2fe;
+    --g-cell-border: #bae6fd;
+    --g-glow: rgba(37, 99, 235, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #bae6fd;
+  }
+
+  .dark[data-game-theme="ocean"] {
+    --g-bg-1: #0a1628;
+    --g-bg-2: #0a1e2e;
+    --g-surface: rgba(15, 40, 71, 0.8);
+    --g-surface-alt: rgba(21, 54, 96, 0.8);
+    --g-border: #1e4976;
+    --g-text: #e0f2fe;
+    --g-text-2: #7dd3fc;
+    --g-text-3: #38bdf8;
+    --g-x: #60a5fa;
+    --g-x-bg: rgba(96, 165, 250, 0.12);
+    --g-x-glow: rgba(96, 165, 250, 0.5);
+    --g-o: #2dd4bf;
+    --g-o-bg: rgba(45, 212, 191, 0.12);
+    --g-o-glow: rgba(45, 212, 191, 0.5);
+    --g-accent: #60a5fa;
+    --g-accent-hover: #3b82f6;
+    --g-accent-bg: rgba(96, 165, 250, 0.12);
+    --g-cell: rgba(21, 54, 96, 0.6);
+    --g-cell-hover: rgba(30, 73, 118, 0.6);
+    --g-cell-border: #1e4976;
+    --g-glow: rgba(96, 165, 250, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(21, 54, 96, 0.6);
+    --g-input-border: #1e4976;
+  }
+
+  /* ---------- SUNSET ---------- */
+  [data-game-theme="sunset"] {
+    --g-bg-1: #fffbeb;
+    --g-bg-2: #fff1f2;
+    --g-surface: #ffffff;
+    --g-surface-alt: #fef3c7;
+    --g-border: #fde68a;
+    --g-text: #78350f;
+    --g-text-2: #92400e;
+    --g-text-3: #b45309;
+    --g-x: #f59e0b;
+    --g-x-bg: #fef3c7;
+    --g-x-glow: rgba(245, 158, 11, 0.35);
+    --g-o: #e11d48;
+    --g-o-bg: #ffe4e6;
+    --g-o-glow: rgba(225, 29, 72, 0.35);
+    --g-accent: #f59e0b;
+    --g-accent-hover: #d97706;
+    --g-accent-bg: #fef3c7;
+    --g-cell: #fffbeb;
+    --g-cell-hover: #fef3c7;
+    --g-cell-border: #fde68a;
+    --g-glow: rgba(245, 158, 11, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #fde68a;
+  }
+
+  .dark[data-game-theme="sunset"] {
+    --g-bg-1: #1c0a00;
+    --g-bg-2: #2a0a0f;
+    --g-surface: rgba(61, 28, 2, 0.8);
+    --g-surface-alt: rgba(74, 37, 8, 0.8);
+    --g-border: #78350f;
+    --g-text: #fef3c7;
+    --g-text-2: #fde68a;
+    --g-text-3: #f59e0b;
+    --g-x: #fbbf24;
+    --g-x-bg: rgba(251, 191, 36, 0.12);
+    --g-x-glow: rgba(251, 191, 36, 0.5);
+    --g-o: #fb7185;
+    --g-o-bg: rgba(251, 113, 133, 0.12);
+    --g-o-glow: rgba(251, 113, 133, 0.5);
+    --g-accent: #fbbf24;
+    --g-accent-hover: #f59e0b;
+    --g-accent-bg: rgba(251, 191, 36, 0.12);
+    --g-cell: rgba(74, 37, 8, 0.6);
+    --g-cell-hover: rgba(120, 53, 15, 0.6);
+    --g-cell-border: #78350f;
+    --g-glow: rgba(251, 191, 36, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(74, 37, 8, 0.6);
+    --g-input-border: #78350f;
+  }
+
+  /* ---------- ROYAL ---------- */
+  [data-game-theme="royal"] {
+    --g-bg-1: #f5f3ff;
+    --g-bg-2: #faf5ff;
+    --g-surface: #ffffff;
+    --g-surface-alt: #ede9fe;
+    --g-border: #c4b5fd;
+    --g-text: #3b0764;
+    --g-text-2: #6b21a8;
+    --g-text-3: #a855f7;
+    --g-x: #7c3aed;
+    --g-x-bg: #ede9fe;
+    --g-x-glow: rgba(124, 58, 237, 0.35);
+    --g-o: #ca8a04;
+    --g-o-bg: #fefce8;
+    --g-o-glow: rgba(202, 138, 4, 0.35);
+    --g-accent: #7c3aed;
+    --g-accent-hover: #6d28d9;
+    --g-accent-bg: #ede9fe;
+    --g-cell: #f5f3ff;
+    --g-cell-hover: #ede9fe;
+    --g-cell-border: #c4b5fd;
+    --g-glow: rgba(124, 58, 237, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #c4b5fd;
+  }
+
+  .dark[data-game-theme="royal"] {
+    --g-bg-1: #0f0520;
+    --g-bg-2: #15082e;
+    --g-surface: rgba(30, 10, 61, 0.8);
+    --g-surface-alt: rgba(46, 16, 101, 0.8);
+    --g-border: #4c1d95;
+    --g-text: #ede9fe;
+    --g-text-2: #c4b5fd;
+    --g-text-3: #a78bfa;
+    --g-x: #a78bfa;
+    --g-x-bg: rgba(167, 139, 250, 0.12);
+    --g-x-glow: rgba(167, 139, 250, 0.5);
+    --g-o: #facc15;
+    --g-o-bg: rgba(250, 204, 21, 0.12);
+    --g-o-glow: rgba(250, 204, 21, 0.5);
+    --g-accent: #a78bfa;
+    --g-accent-hover: #8b5cf6;
+    --g-accent-bg: rgba(167, 139, 250, 0.12);
+    --g-cell: rgba(46, 16, 101, 0.6);
+    --g-cell-hover: rgba(76, 29, 149, 0.6);
+    --g-cell-border: #4c1d95;
+    --g-glow: rgba(167, 139, 250, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(46, 16, 101, 0.6);
+    --g-input-border: #4c1d95;
+  }
+
+  /* ---------- FOREST ---------- */
+  [data-game-theme="forest"] {
+    --g-bg-1: #ecfdf5;
+    --g-bg-2: #f0fdf4;
+    --g-surface: #ffffff;
+    --g-surface-alt: #d1fae5;
+    --g-border: #a7f3d0;
+    --g-text: #064e3b;
+    --g-text-2: #047857;
+    --g-text-3: #10b981;
+    --g-x: #059669;
+    --g-x-bg: #d1fae5;
+    --g-x-glow: rgba(5, 150, 105, 0.35);
+    --g-o: #d97706;
+    --g-o-bg: #fef3c7;
+    --g-o-glow: rgba(217, 119, 6, 0.35);
+    --g-accent: #059669;
+    --g-accent-hover: #047857;
+    --g-accent-bg: #d1fae5;
+    --g-cell: #ecfdf5;
+    --g-cell-hover: #d1fae5;
+    --g-cell-border: #a7f3d0;
+    --g-glow: rgba(5, 150, 105, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #a7f3d0;
+  }
+
+  .dark[data-game-theme="forest"] {
+    --g-bg-1: #021a0f;
+    --g-bg-2: #0a2618;
+    --g-surface: rgba(6, 78, 59, 0.7);
+    --g-surface-alt: rgba(6, 95, 70, 0.7);
+    --g-border: #047857;
+    --g-text: #d1fae5;
+    --g-text-2: #6ee7b7;
+    --g-text-3: #34d399;
+    --g-x: #34d399;
+    --g-x-bg: rgba(52, 211, 153, 0.12);
+    --g-x-glow: rgba(52, 211, 153, 0.5);
+    --g-o: #fbbf24;
+    --g-o-bg: rgba(251, 191, 36, 0.12);
+    --g-o-glow: rgba(251, 191, 36, 0.5);
+    --g-accent: #34d399;
+    --g-accent-hover: #10b981;
+    --g-accent-bg: rgba(52, 211, 153, 0.12);
+    --g-cell: rgba(6, 95, 70, 0.5);
+    --g-cell-hover: rgba(4, 120, 87, 0.5);
+    --g-cell-border: #047857;
+    --g-glow: rgba(52, 211, 153, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(6, 95, 70, 0.5);
+    --g-input-border: #047857;
+  }
+
+  /* ---------- CANDY ---------- */
+  [data-game-theme="candy"] {
+    --g-bg-1: #fdf2f8;
+    --g-bg-2: #fce7f3;
+    --g-surface: #ffffff;
+    --g-surface-alt: #fce7f3;
+    --g-border: #f9a8d4;
+    --g-text: #831843;
+    --g-text-2: #be185d;
+    --g-text-3: #ec4899;
+    --g-x: #db2777;
+    --g-x-bg: #fce7f3;
+    --g-x-glow: rgba(219, 39, 119, 0.35);
+    --g-o: #0284c7;
+    --g-o-bg: #e0f2fe;
+    --g-o-glow: rgba(2, 132, 199, 0.35);
+    --g-accent: #db2777;
+    --g-accent-hover: #be185d;
+    --g-accent-bg: #fce7f3;
+    --g-cell: #fdf2f8;
+    --g-cell-hover: #fce7f3;
+    --g-cell-border: #f9a8d4;
+    --g-glow: rgba(219, 39, 119, 0.15);
+    --g-success: #10b981;
+    --g-danger: #ef4444;
+    --g-input-bg: #ffffff;
+    --g-input-border: #f9a8d4;
+  }
+
+  .dark[data-game-theme="candy"] {
+    --g-bg-1: #1a0512;
+    --g-bg-2: #2a0a1e;
+    --g-surface: rgba(74, 14, 46, 0.8);
+    --g-surface-alt: rgba(92, 18, 64, 0.8);
+    --g-border: #831843;
+    --g-text: #fce7f3;
+    --g-text-2: #f9a8d4;
+    --g-text-3: #f472b6;
+    --g-x: #f472b6;
+    --g-x-bg: rgba(244, 114, 182, 0.12);
+    --g-x-glow: rgba(244, 114, 182, 0.5);
+    --g-o: #38bdf8;
+    --g-o-bg: rgba(56, 189, 248, 0.12);
+    --g-o-glow: rgba(56, 189, 248, 0.5);
+    --g-accent: #f472b6;
+    --g-accent-hover: #ec4899;
+    --g-accent-bg: rgba(244, 114, 182, 0.12);
+    --g-cell: rgba(92, 18, 64, 0.5);
+    --g-cell-hover: rgba(131, 24, 67, 0.5);
+    --g-cell-border: #831843;
+    --g-glow: rgba(244, 114, 182, 0.2);
+    --g-success: #34d399;
+    --g-danger: #f87171;
+    --g-input-bg: rgba(92, 18, 64, 0.5);
+    --g-input-border: #831843;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* ==============================================
+   GAME ANIMATIONS
+   ============================================== */
+
+@keyframes cell-pop {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  70% { transform: scale(1.15) rotate(8deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px var(--g-glow); }
+  50% { box-shadow: 0 0 25px var(--g-glow), 0 0 50px var(--g-glow); }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes slide-up-fade {
+  0% { transform: translateY(24px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes celebrate-bounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.08) rotate(-3deg); }
+  75% { transform: scale(1.08) rotate(3deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 var(--g-accent); opacity: 0.6; }
+  100% { box-shadow: 0 0 0 16px var(--g-accent); opacity: 0; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Utility animation classes */
+.anim-cell-pop { animation: cell-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+.anim-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+.anim-float { animation: float-y 3s ease-in-out infinite; }
+.anim-slide-up { animation: slide-up-fade 0.4s ease-out forwards; }
+.anim-gradient { animation: gradient-shift 8s ease infinite; background-size: 200% 200%; }
+.anim-celebrate { animation: celebrate-bounce 0.6s ease-in-out; }
+.anim-shimmer { animation: shimmer 2s linear infinite; background-size: 200% 100%; }
+.anim-pulse-ring { animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.anim-spin-slow { animation: spin-slow 20s linear infinite; }
+
+/* ==============================================
+   GAME UTILITY CLASSES
+   ============================================== */
+
+.game-bg {
+  background: linear-gradient(135deg, var(--g-bg-1), var(--g-bg-2));
+  min-height: 100vh;
+  transition: background 0.4s ease;
+}
+
+.game-surface {
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.game-cell {
+  background: var(--g-cell);
+  border: 2px solid var(--g-cell-border);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.game-cell:hover:not(:disabled):not([data-filled="true"]) {
+  background: var(--g-cell-hover);
+  box-shadow: 0 0 20px var(--g-glow);
+  transform: scale(1.04);
+  border-color: var(--g-accent);
+}
+
+.game-cell:disabled,
+.game-cell[data-filled="true"] {
+  cursor: default;
+}
+
+.game-input {
+  background: var(--g-input-bg);
+  border: 2px solid var(--g-input-border);
+  color: var(--g-text);
+  transition: all 0.2s ease;
+}
+
+.game-input:focus {
+  border-color: var(--g-accent);
+  box-shadow: 0 0 0 3px var(--g-glow);
+  outline: none;
+}
+
+.game-input::placeholder {
+  color: var(--g-text-3);
+}
+
+.game-btn-primary {
+  background: var(--g-accent);
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-btn-primary:hover:not(:disabled) {
+  background: var(--g-accent-hover);
+  box-shadow: 0 0 20px var(--g-glow);
+  transform: translateY(-1px);
+}
+
+.game-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.game-btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Score badge glow effects */
+.glow-x { box-shadow: 0 0 15px var(--g-x-glow), inset 0 0 15px var(--g-x-glow); }
+.glow-o { box-shadow: 0 0 15px var(--g-o-glow), inset 0 0 15px var(--g-o-glow); }
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
